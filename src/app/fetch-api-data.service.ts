@@ -8,7 +8,7 @@ const apiUrl = 'https://movies-api23.herokuapp.com/';
 @Injectable({
   providedIn: 'root'
 })
-export class UserRegistrationService {
+export class FetchApiDataService {
   // Inject the HttpClient module to the constructor params
  // This will provide HttpClient to the entire class, making it available via this.http
   constructor(private http: HttpClient) {
@@ -21,7 +21,7 @@ export class UserRegistrationService {
     );
   }
   //user Login endpoint
-  public userLogin( userDetails: any): Oserbable<any> {
+  public userLogin( userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(apiUrl + 'login', userDetails).pipe(
       catchError(this.handleError)
@@ -146,7 +146,7 @@ export class UserRegistrationService {
       catchError(this.handleError));
     }
 // Non-typed response extraction
-private extractResponseData(res: Response): any {
+private extractResponseData(res: any): any {
   const body = res;
   return body || { };
 }
