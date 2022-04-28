@@ -1,0 +1,16 @@
+.main-page {
+  position:absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+  background-color: gray;
+  padding: 25px;
+}
+
+button {
+  margin: 10px;
+}
+
+h1 {
+  font-weight: bold;
+}
