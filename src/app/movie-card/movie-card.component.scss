@@ -1,7 +1,22 @@
-mat-card{
-  height: 650px;
+.movie-card{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin:auto;
+  max-width: 90%;
 }
 
-img{
-  height: 82%;
+mat-card{
+ max-width: 280px;
+ margin: 2rem 1rem;
+}
+
+.movie-img{
+  width: 100%;
+}
+
+h1{
+  align-items: center;
+  margin: 25px;
+  font-weight: bold;
 }
