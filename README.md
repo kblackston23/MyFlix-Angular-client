@@ -9,13 +9,21 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 Key Features
 
 -Displays a welcome view where users can either login ot register for an account.
+
 -Registered users can view all movies once authenticated
+
 -Users can view a movie's genre, director, and synopsis information individually
+
 -Users can adda movie to their favorites
+
 -Users can remove movies from their favorites
+
 -Users can change their details and update profile information
 
 Technologies Used
+
 -Angular
+
 -Angular Material
+
 -Node.js
