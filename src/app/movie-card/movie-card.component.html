@@ -1,4 +1,4 @@
- <h1>myFlix Movie List</h1>
+ <app-navbar></app-navbar>
  <div class= "movie-card">
   <mat-card *ngFor="let movie of movies;" style="flex: 1 1 auto;">
       <mat-card-header>
@@ -6,24 +6,27 @@
           <mat-card-subtitle>Directed by: {{movie.Director.Name}}</mat-card-subtitle>
       </mat-card-header>
       <img class="movie-img" src={{movie.ImagePath}} alt= {{movie.Title}} />
-      <mat-card-actions>
+      <mat-card-actions class="btn-space">
           <button
-              mat-button
-              color="primary"
+            class="movie-btn"
+            mat-button
+            (click)="getGenre(movie.Genre.Name, movie.Genre.Description)"
           >
-              Genre
+            Genre
           </button>
           <button
-              mat-button
-              color="primary"
+            class="movie-btn"
+            mat-button
+            (click)="getDirector(movie.Director.Name, movie.Director.Bio, movie.Director.Birth)"
           >
-              Director
+            Director
           </button>
           <button
-              mat-button
-              color="primary"
-          >
-              Synopsis
+            class="movie-btn"
+            mat-button
+            (click)="getDetails(movie.Title, movie.ImagePath, movie.Description)"
+            >
+            Details
           </button>
           <mat-icon>favorite_border</mat-icon>
       </mat-card-actions>

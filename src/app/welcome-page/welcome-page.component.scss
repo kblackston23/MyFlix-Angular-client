@@ -3,8 +3,11 @@
   left: 50%;
   top:50%;
   transform: translate(-50%, -50%);
-  background-color: gray;
+  background-color: lightgray;
   padding: 25px;
+  height: 100px;
+  width: 200px;
+  border-radius: 10%;
 }
 
 button {
@@ -12,5 +15,5 @@ button {
 }
 
 h1 {
-  font-weight: bold;
+  font-size: 22px;
 }

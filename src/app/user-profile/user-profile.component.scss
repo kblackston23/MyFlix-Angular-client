@@ -1,0 +1,29 @@
+.profile-body{
+  background-color: lightgray;
+  width: 100%;
+  height: 100%;
+}
+
+.user-body{
+  width: 60%;
+  margin: auto;
+}
+
+.user-info{
+  padding-left: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: auto;
+}
+
+.edit-button {
+  background-color: lightgray;
+  color: black;
+  margin: 25px;
+}
+
+.delete-button {
+  background-color: red;
+}

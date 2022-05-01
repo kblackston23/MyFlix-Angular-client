@@ -21,7 +21,7 @@ export class FetchApiDataService {
     );
   }
   //user Login endpoint
-  public userLogin( userDetails: any): Observable<any> {
+  public userLogin(userDetails: any): Observable<any> {
     console.log(userDetails);
     return this.http.post(apiUrl + 'login', userDetails).pipe(
       catchError(this.handleError)
@@ -75,8 +75,9 @@ export class FetchApiDataService {
     );
   }
   //Get User's profile
-  getUserProfile(username: any): Observable<any> {
+  getUserProfile(): Observable<any> {
     const token = localStorage.getItem('token');
+    const username = localStorage.getItem('user');
     return this.http.get(apiUrl + `users/${username}`, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
@@ -134,7 +135,7 @@ export class FetchApiDataService {
   }
 
     //Delete a movie from user's favorites
-  deleteFavoriteMovies(MovieID: any): Observable<any> {
+  deleteFavoriteMovie(MovieID: any): Observable<any> {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
     return this.http.delete(apiUrl + `users/${username}/movies/${MovieID}`, {
