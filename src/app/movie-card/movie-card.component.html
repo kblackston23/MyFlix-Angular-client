@@ -28,7 +28,13 @@
             >
             Details
           </button>
-          <mat-icon>favorite_border</mat-icon>
+          <button
+            class="favorite-btn"
+            mat-button
+            (click)="addFavoriteMovie(movie._id, movie.Title)"
+          >
+          Favorite
+          </button>
       </mat-card-actions>
   </mat-card>
 </div>

@@ -13,6 +13,7 @@ import { DetailsViewComponent } from '../details-view/details-view.component';
 })
 export class MovieCardComponent {
   movies: any[] = [];
+  favoriteMovies: any [] = [];
 
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -41,7 +42,6 @@ getDirector(name: string, bio: string, birthdate: string): void {
       Birthdate: birthdate,
     },
     width: '500px',
-    backdropClass: 'backdropBackground'
    });
   }
 
@@ -77,8 +77,8 @@ getCurrentUser(): void {
     });
   }
 
-addFavoriteMovie(MovieID: string, title: string): void {
-  this.fetchApiData.addFavoriteMovies(MovieID).subscribe((resp: any) => {
+addFavoriteMovie(id: string, title: string): void {
+  this.fetchApiData.addFavoriteMovies(id).subscribe((resp: any) => {
     this.snackBar.open(`${title} has been added to your favourites!`, 'OK', {
       duration: 3000,
       });
@@ -86,8 +86,8 @@ addFavoriteMovie(MovieID: string, title: string): void {
     });
   }
 
-removeFavoriteMovie(MovieID: string, title: string): void {
-  this.fetchApiData.deleteFavoriteMovie(MovieID).subscribe((resp: any) => {
+removeFavoriteMovie(id: string, title: string): void {
+  this.fetchApiData.deleteFavoriteMovie(id).subscribe((resp: any) => {
     console.log(resp);
     this.snackBar.open(
       `${title} has been removed from your favourites!`,

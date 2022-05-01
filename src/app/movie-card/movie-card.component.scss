@@ -10,7 +10,7 @@
 mat-card{
  max-width: 285px;
  margin: 2rem 1rem;
- height: 575px;
+ height: 565px;
 }
 
 .movie-img{
@@ -31,4 +31,11 @@ mat-card{
   display: flex;
   margin-bottom: 5px;
   justify-content: space-evenly;
+}
+
+.favorite-btn{
+  background-color: red;
+  color: white;
+  margin: 0;
+  padding: 5px;
 }

@@ -1,7 +1,7 @@
 .profile-body{
   background-color: lightgray;
   width: 100%;
-  height: 100%;
+  height: fit-content;
 }
 
 .user-body{
@@ -26,4 +26,29 @@
 
 .delete-button {
   background-color: red;
+  color: white;
+}
+
+.movie-box{
+  margin: 0 auto;
+  width: 100%;
+}
+
+.movie-card{
+  display: inline-block;
+  margin: 10px;
+  justify-content: space-evenly;
+}
+
+.movie-img {
+  height: 250px;
+  width: 175px;
+}
+
+.title{
+  font-size: 16px;
+}
+
+.movie-head{
+  margin: 0;
 }

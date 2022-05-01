@@ -51,7 +51,7 @@
         >
       </mat-form-field>
     </form>
-    <mat-card-actions class="usercard-actions">
+    <mat-card-actions>
       <button
         class="edit-button"
         mat-raised-button
@@ -69,5 +69,32 @@
         Delete profile
       </button>
     </mat-card-actions>
-  </mat-card>
+    <div class="movie-box">
+      <div *ngIf="displayElement; else message">
+        <h2>Your favorite movies</h2>
+        <mat-card *ngFor="let movie of favoriteMovies; let i = index" class="movie-card">
+          <mat-dialog-content>
+            <mat-card-title class="title">{{ movie.Title }}</mat-card-title>
+            <mat-card-subtitle
+              ><img class="movie-img" src="{{ movie.ImagePath }}"
+            /></mat-card-subtitle>
+            <mat-card-header class="movie-head">
+              <button
+              class="delete-button"
+              mat-button
+              (click)="removeFavoriteMovie(movie._id)"
+            >
+              Delete
+            </button>
+            </mat-card-header>
+          </mat-dialog-content>
+        </mat-card>
+      </div>
+      <ng-template #message>
+        <h2>You don't have any favorite movies in your list</h2>
+      </ng-template>
+    </div>
+    
+</mat-card>
 </div>
+

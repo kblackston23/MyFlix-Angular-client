@@ -14,8 +14,7 @@ export class UserProfileComponent implements OnInit {
   user: any = {};
   movies: any[] = [];
   username: any = localStorage.getItem('user');
-  favs: any = null;
-  favMovies: any[] = [];
+  favoriteMovies: any[] = [];
   displayElement: boolean = false
 
   @Input() userData = { 
@@ -34,6 +33,7 @@ export class UserProfileComponent implements OnInit {
  
   ngOnInit(): void {
     this.getUser();
+    this.getFavorites();
     console.log(this.userData);
   }
 
@@ -73,6 +73,35 @@ export class UserProfileComponent implements OnInit {
       this.router.navigate(['welcome']);
     }
   }
+
+  removeFavoriteMovie(id: string): void {
+    this.fetchApiData.deleteFavoriteMovie(id).subscribe((resp: any) => {
+      console.log(resp);
+      this.snackBar.open(
+        `Removed from your favourites!`,
+        'OK',
+        {
+          duration: 3000,
+        });
+        this.ngOnInit();
+      });
+    }
+
+    getFavorites(): void {
+      let movies: any[] = [];
+      this.fetchApiData.getAllMovies().subscribe((res: any) => {
+        movies = res;
+        movies.forEach((movie: any) => {
+          if (this.user.FavoriteMovies.includes(movie._id)) {
+            this.favoriteMovies.push(movie);
+            this.displayElement = true;
+          }
+          });
+        
+      });
+      
+     
+    }
 
  
 }
