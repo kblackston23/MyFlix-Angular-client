@@ -6,24 +6,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-Key Features
+## Key Features
 
--Displays a welcome view where users can either login ot register for an account.
+- Displays a welcome view where users can either login ot register for an account.
 
--Registered users can view all movies once authenticated
+- Registered users can view all movies once authenticated
 
--Users can view a movie's genre, director, and synopsis information individually
+- Users can view a movie's genre, director, and synopsis information individually
 
--Users can adda movie to their favorites
+- Users can adda movie to their favorites
 
--Users can remove movies from their favorites
+- Users can remove movies from their favorites
 
--Users can change their details and update profile information
+- Users can change their details and update profile information
 
-Technologies Used
+## Technologies Used
 
--Angular
+- Angular
 
--Angular Material
+- Angular Material
 
--Node.js
+- Node.js
